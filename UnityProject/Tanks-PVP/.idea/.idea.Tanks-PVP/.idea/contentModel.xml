@@ -431,6 +431,31 @@
             </e>
           </e>
         </e>
+        <e p="Scripts" t="Include">
+          <e p="Components" t="Include">
+            <e p="Block" t="Include">
+              <e p="BlockCollidableComponent.cs" t="Include" />
+              <e p="BlockComponent.cs" t="Include" />
+              <e p="BlockDestructableComponent.cs" t="Include" />
+              <e p="BlockRenderComponent.cs" t="Include" />
+            </e>
+            <e p="MapComponent.cs" t="Include" />
+          </e>
+          <e p="Providers" t="Include">
+            <e p="BlockProvider.cs" t="Include" />
+            <e p="BlockRenderProvider.cs" t="Include" />
+            <e p="MapProvider.cs" t="Include" />
+          </e>
+          <e p="ScriptableObjects" t="Include">
+            <e p="ArtManager.cs" t="Include" />
+          </e>
+          <e p="Systems" t="Include">
+            <e p="BlockSpawnSystem.cs" t="Include" />
+            <e p="GameSystem.cs" t="Include" />
+            <e p="MapSystem.cs" t="Include" />
+            <e p="SomeInitializer.cs" t="Include" />
+          </e>
+        </e>
         <e p="ScriptTemplates" t="Include">
           <e p="ECS__Component.cs.txt" t="Include" />
           <e p="ECS__FixedSystem.cs.txt" t="Include" />

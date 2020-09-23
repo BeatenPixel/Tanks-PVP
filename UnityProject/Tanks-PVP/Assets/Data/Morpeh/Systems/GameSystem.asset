@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44ee3548a8ccd34ea4fbbc50f2a1e76, type: 3}
+  m_Name: GameSystem
+  m_EditorClassIdentifier: 
+  map: {fileID: 11400000, guid: 7445286a8fff8b34681aeba186b78a82, type: 2}
+  blockSpawnSystem: {fileID: 11400000, guid: 1119851e94c8a9b458e1a07ee32c5eeb, type: 2}
+  artManager: {fileID: 11400000, guid: 13b7bdf686227ea4ab44d1d99d20154c, type: 2}

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699edc301e790de4d8fcad0bd5bddd95, type: 3}
+  m_Name: ArtManager
+  m_EditorClassIdentifier: 
+  blockSprites:
+  - {fileID: -4233739483619845583, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 6682738439518977790, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 7903714108508714464, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: -2542073858232844238, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 4362130248060910229, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 3504771490602477266, guid: ad14d4fff7cf5bf40a2af914f7bf5a31, type: 3}
+  brickSprites:
+  - {fileID: -5930158604282628446, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 5743168839956448968, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: -562605217060080129, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 3912554482014063563, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: -4970410492042351176, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: -232304020389510235, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 4717279005209572468, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: -6551456632857933372, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 6682738439518977790, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  waterSprites:
+  - {fileID: -2542073858232844238, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}
+  - {fileID: 1940044384358670937, guid: 873ce51a87e3bba47b5918438c9a83b9, type: 3}

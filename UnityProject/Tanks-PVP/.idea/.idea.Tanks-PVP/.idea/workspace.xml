@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,12 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d8915d7-e046-4345-a594-42f0bafa3d10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tanks-PVP/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tanks-PVP/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tanks-PVP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tanks-PVP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/FindReference2/FR2_Cache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FindReference2/FR2_Cache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +39,40 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/MorpehTest/Components/UnitViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MorpehTest/Providers/UnitProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Providers/RemoveEntityOnDestroy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MorpehTest/Systems/TestUnitViewSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Components/Block/BlockCollidableComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/GameSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/95/889725d0/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ArtManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MorpehTest/Providers/UnitProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/BlockSpawnSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Providers/BlockProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Providers/BlockRenderProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Morpeh.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Globals/Globals.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/SomeInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Components/Block/BlockDestructableComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5855222F-0CE3-4C52-946F-393379CE5BEA/ed/e075d154/IInitializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Systems/FixedUpdateSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Systems/Initializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/MapSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Systems/LateUpdateSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Systems/Configurator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Systems/UpdateSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5855222F-0CE3-4C52-946F-393379CE5BEA/aa/1d4dd4b4/IComponent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Components/Block/BlockRenderComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Providers/ComponentProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Utils/Editor/IconsSetter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Installer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Providers/EntityProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Components/MapComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/BaseInstaller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Providers/ObjectsProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Providers/MapProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Providers/WorldViewer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MorpehTest/Components/UnitStoppedMarker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Providers/MonoProvider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -52,6 +84,24 @@
         <option value="$PROJECT_DIR$/Assets/MorpehTest/Systems/TestUnitViewSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/MorpehTest/Components/UnitStoppedMarker.cs" />
         <option value="$PROJECT_DIR$/Assets/MorpehTest/Systems/TestPositionSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/Block/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/Block/DestructableBlockComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Providers/BlockProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Providers/MapProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/Block/BlockAnimatedRenderComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/Block/BlockRenderComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Providers/BlockRenderProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/Block/BlockComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/Block/BlockCollidableComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/Block/BlockDestructableComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ArtSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/MapComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/GameSystem.cs" />
+        <option value="$PROJECT_DIR$/Library/PackageCache/com.xcrew.morpeh@15dc8d5be2/Unity/Providers/MonoProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/BlockSpawnSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ArtManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/MapSystem.cs" />
       </list>
     </option>
   </component>
@@ -65,7 +115,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -97,7 +147,11 @@
       <option name="presentableId" value="Default" />
       <updated>1600596337417</updated>
       <workItem from="1600596349848" duration="324000" />
-      <workItem from="1600596690779" duration="2689000" />
+      <workItem from="1600596690779" duration="7238000" />
+      <workItem from="1600614001855" duration="12966000" />
+      <workItem from="1600783928498" duration="5596000" />
+      <workItem from="1600806689883" duration="1116000" />
+      <workItem from="1600870517456" duration="994000" />
     </task>
     <servers />
   </component>
@@ -122,17 +176,19 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="277" y="57" key="SettingsEditor" timestamp="1600597173579">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2266" y="72" key="SettingsEditor" timestamp="1600622759722">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600597173579" />
+    <state x="2266" y="72" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600622759722" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1600600587765">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600600587765" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600600246459">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2459" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1600806700367">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600600246459" />
+    <state x="2459" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600806700367" />
   </component>
 </project>
