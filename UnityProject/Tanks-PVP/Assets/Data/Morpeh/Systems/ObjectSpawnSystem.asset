@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543f2d3c2b5bd21408140978d748ad4e, type: 3}
-  m_Name: BlockSpawnSystem
+  m_Script: {fileID: 11500000, guid: 9bba538bff81429478e10e04ff06a337, type: 3}
+  m_Name: ObjectSpawnSystem
   m_EditorClassIdentifier: 
   basicBlockProvider: {fileID: 3735790745993169987, guid: aeac779c594a94e4397cfc3bc7610c85,
+    type: 3}
+  animatedBlockProvider: {fileID: 1550870113449944796, guid: 52039a6eae85e9c4ea0e407eee0cce3c,
+    type: 3}
+  projectileProvider: {fileID: 1343311928776956309, guid: e4e435b74a2bafd4386208930108a532,
     type: 3}

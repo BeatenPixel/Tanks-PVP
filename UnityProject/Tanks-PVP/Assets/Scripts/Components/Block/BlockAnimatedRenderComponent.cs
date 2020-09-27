@@ -1,25 +1,18 @@
 ﻿using Morpeh;
 using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
-using System.Collections.Generic;
 
 [Il2CppSetOption(Option.NullChecks, false)]
 [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
 [Il2CppSetOption(Option.DivideByZeroChecks, false)]
 [System.Serializable]
-public struct BlockComponent : IComponent {
-    public BlockType type;
-    public int x;
-    public int y;
+public struct BlockAnimatedRenderComponent : IComponent {
+    public BlockAnimationContent content;
+    public SpriteRenderer spriteRenderer;
+    public int currentAnimationFrame;
 }
 
-public enum BlockType {
+public enum BlockAnimationContent {
     NONE,
-    AIR,
-    WALL,
-    BRICK,
-    ICE,
-    WATER,
-    LEAVES,
-    FLAG
+    WATER
 }

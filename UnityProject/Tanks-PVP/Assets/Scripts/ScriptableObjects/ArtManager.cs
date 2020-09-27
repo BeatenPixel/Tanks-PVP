@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "TanksPVP/ArtManager", fileName = "ArtManager")]
@@ -7,8 +8,9 @@ public class ArtManager : ScriptableObject {
 
     [SerializeField] private Sprite[] blockSprites;
     [SerializeField] private Sprite[] brickSprites;
-    [SerializeField] private Sprite[] waterSprites;
-
+    [SerializeField] private List<BlockAnimation> blockAnimations;
+    public List<TankAnimation> tankAnimations;
+    
     public Sprite GetBlockSprite(BlockType blockType) {
         try {
             return blockSprites[(int) blockType - 2];
@@ -24,8 +26,24 @@ public class ArtManager : ScriptableObject {
         return brickSprites[indexValues.FindIndex(x => x == subBlocks)];
     }
 
-    public Sprite[] GetWaterAnimationSprites() {
-        return waterSprites;
+    public BlockAnimation GetBlockAnimation(BlockAnimationContent content) {
+        return blockAnimations.First((x) => x.content == content);
     }
 
+    public Sprite GetTankSprite(int tankType, int tankLevel, int faceDirection, int animationFrame) {
+        return tankAnimations[tankType].sprites[tankLevel * 8 + 4 * animationFrame + faceDirection];
+    }
+
+}
+
+[System.Serializable]
+public struct BlockAnimation {
+    public BlockAnimationContent content;
+    public Sprite[] sprites;
+}
+
+[System.Serializable]
+public struct TankAnimation {
+    public int tankType;
+    public Sprite[] sprites;
 }

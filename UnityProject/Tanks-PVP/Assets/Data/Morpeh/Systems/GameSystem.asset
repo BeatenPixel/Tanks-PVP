@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c44ee3548a8ccd34ea4fbbc50f2a1e76, type: 3}
   m_Name: GameSystem
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 7445286a8fff8b34681aeba186b78a82, type: 2}
-  blockSpawnSystem: {fileID: 11400000, guid: 1119851e94c8a9b458e1a07ee32c5eeb, type: 2}
+  mapSystem: {fileID: 11400000, guid: 7445286a8fff8b34681aeba186b78a82, type: 2}
+  objectSpawnSystem: {fileID: 11400000, guid: 02dd5d3d5e7824143ac22d59da1fb5af, type: 2}
+  playerInputSystem: {fileID: 11400000, guid: 7a0254053754d1444a5fa3934ab4b5c3, type: 2}
+  tankRenderSystem: {fileID: 11400000, guid: b7329d1dd69d27149911fd8c1a1656fa, type: 2}
+  tankShootSystem: {fileID: 11400000, guid: e0d2581a1e15c1346a11d055496b3b9f, type: 2}
+  playerMovementSystem: {fileID: 11400000, guid: ffd8326bb5e975e4896e97c4c94cfad0,
+    type: 2}
   artManager: {fileID: 11400000, guid: 13b7bdf686227ea4ab44d1d99d20154c, type: 2}

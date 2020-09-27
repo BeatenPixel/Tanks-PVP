@@ -8,16 +8,30 @@ using Unity.IL2CPP.CompilerServices;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(GameSystem))]
 public sealed class GameSystem : UpdateSystem {
 
-    public MapSystem map;
-    public BlockSpawnSystem blockSpawnSystem;
+    public MapSystem mapSystem;
+    public ObjectSpawnSystem objectSpawnSystem;
+    public PlayerInputSystem playerInputSystem;
+    public TanksRenderSystem tankRenderSystem;
+    public TankShootSystem tankShootSystem;
+    public PlayerMovementSystem playerMovementSystem;
 
     public ArtManager artManager;
-    
+
+    private Filter playersFilter;
+
     public override void OnAwake() {
-        Debug.Log("1");
-        map.Initialize(blockSpawnSystem,artManager);
+
+        playersFilter = World.Filter.With<PlayerComponent>();
+        playersFilter.First().AddComponent<LocalPlayerTag>();
+
+        mapSystem.Initialize(objectSpawnSystem,artManager);
+        tankRenderSystem.Initialize(artManager);
+        tankShootSystem.Initialize(objectSpawnSystem, mapSystem, artManager);
+        playerMovementSystem.Initialize(mapSystem);
     }
 
     public override void OnUpdate(float deltaTime) {
+        mapSystem.OnUpdate(deltaTime);
+        playerInputSystem.OnUpdate(deltaTime);
     }
 }
