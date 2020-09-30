@@ -14,16 +14,18 @@ using System.Net.Http.Headers;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(TankShootSystem))]
 public sealed class TankShootSystem : UpdateSystem {
 
-    [SerializeField] private GlobalEventInt onTankShootRequestedEvent;
+    [SerializeField] private GlobalEventString onTankShootRequestedEvent;
 
     private Filter tanksFilter;
     private Filter projectilesFilter;
+    private Filter playersFilter;
 
     private ObjectSpawnSystem objectSpawnSystem;
     private MapSystem mapSystem;
     private ArtManager artManager;
 
     public override void OnAwake() {
+        playersFilter = World.Filter.With<PlayerComponent>();
         tanksFilter = World.Filter.With<TankComponent>();
         projectilesFilter = World.Filter.With<ProjectileComponent>();
     }
@@ -36,14 +38,26 @@ public sealed class TankShootSystem : UpdateSystem {
 
     public override void OnUpdate(float deltaTime) {
 
-
-
         if(onTankShootRequestedEvent.IsPublished) {
-            
-            foreach (var tankEntID in onTankShootRequestedEvent.BatchedChanges) {
-                Debug.Log("Ent ID " + tankEntID);
 
-                Entity tankEntity = tanksFilter.First((x) => x.ID == tankEntID);
+            Debug.Log("SHOOT");
+
+            foreach (var networkViewIDStr in onTankShootRequestedEvent.BatchedChanges) {
+                int networkViewID = int.Parse(networkViewIDStr);
+                PlayerProvider playerProvider = null;
+
+                foreach (var p in playersFilter) {
+                    ref PlayerComponent pc = ref p.GetComponent<PlayerComponent>();
+                    if(pc.networkPlayer.networkViewID == networkViewID) {
+                        playerProvider = pc.networkPlayer.GetPlayerProvider();
+                        break;
+                    }
+                }
+
+                if (playerProvider == null)
+                    continue;
+
+                Entity tankEntity = playerProvider.Entity;
                 
                 ref TankComponent tank = ref tankEntity.GetComponent<TankComponent>();
 

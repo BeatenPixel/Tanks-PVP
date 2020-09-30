@@ -20,3 +20,5 @@ MonoBehaviour:
   playerMovementSystem: {fileID: 11400000, guid: ffd8326bb5e975e4896e97c4c94cfad0,
     type: 2}
   artManager: {fileID: 11400000, guid: 13b7bdf686227ea4ab44d1d99d20154c, type: 2}
+  networkEventsManager: {fileID: 11400000, guid: 25973a2a70449ec40a309b680ae0998a,
+    type: 2}

@@ -9,6 +9,10 @@ using Unity.IL2CPP.CompilerServices;
 public struct TankComponent : IComponent {
     public float x;
     public float y;
+
+    public float[] receivedPosX;
+    public float[] receivedPosY;
+
     public byte faceDirection; // 0=up 1=right 2=down 3=left
     public int currentLevel;
     public int tankType;

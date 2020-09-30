@@ -13,4 +13,6 @@ public struct PlayerComponent : IComponent {
     public bool fire;
     public float lastFireTime;
     public float fireRate;
+
+    public NetworkPlayer networkPlayer;
 }

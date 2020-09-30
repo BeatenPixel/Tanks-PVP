@@ -18,3 +18,5 @@ MonoBehaviour:
     type: 3}
   projectileProvider: {fileID: 1343311928776956309, guid: e4e435b74a2bafd4386208930108a532,
     type: 3}
+  playerProviderPrefab: {fileID: 9109982734229414957, guid: 881d9ab8c3e6be14bb14a22d9ee093db,
+    type: 3}

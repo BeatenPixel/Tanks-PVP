@@ -9,16 +9,14 @@ using Morpeh.Globals;
 [CreateAssetMenu(menuName = "ECS/Systems/" + nameof(PlayerInputSystem))]
 public sealed class PlayerInputSystem : UpdateSystem {
 
-    [SerializeField] private GlobalEventInt onTankShootRequestedEvent;
-
-    private Filter playerFilter;
+    private Filter localPlayerFilter;
 
     public override void OnAwake() {
-        playerFilter = World.Filter.With<PlayerComponent>().With<TankComponent>().With<LocalPlayerTag>();
+        localPlayerFilter = World.Filter.With<PlayerComponent>().With<TankComponent>().With<LocalPlayerTag>();
     }
 
     public override void OnUpdate(float deltaTime) {
-        Entity playerEntity = playerFilter.First();
+        Entity playerEntity = localPlayerFilter.First();
 
         ref PlayerComponent player = ref playerEntity.GetComponent<PlayerComponent>();
         ref TankComponent tank = ref playerEntity.GetComponent<TankComponent>();
@@ -40,18 +38,20 @@ public sealed class PlayerInputSystem : UpdateSystem {
             player.inputY = 0;
         }
 
-        if(player.fire) {
+        if(player.fire && Time.time >= player.lastFireTime + player.fireRate) {
             player.fire = false;
         }
-
-        if(Input.GetKey(KeyCode.F) && Time.time > player.lastFireTime + player.fireRate) {
+        
+        if(Input.GetKey(KeyCode.Space) && Time.time > player.lastFireTime + player.fireRate) {
             player.fire = true;
             player.lastFireTime = Time.time;
-
-            onTankShootRequestedEvent.Publish(playerEntity.ID);
+            Debug.Log("GetKeyShoot");
+            NetworkEventsManager.inst.PublishEvent("tankShootRequest",
+                player.networkPlayer.networkViewID.ToString(), Photon.Realtime.ReceiverGroup.All);
         }
 
         tank.inputX = player.inputX;
         tank.inputY = player.inputY;
     }
+
 }

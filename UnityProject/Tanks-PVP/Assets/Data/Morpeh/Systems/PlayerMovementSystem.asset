@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd7f68531519c74598eb1a9ceb414b3, type: 3}
   m_Name: PlayerMovementSystem
   m_EditorClassIdentifier: 
+  syncSpeed: 30

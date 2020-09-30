@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4d0bfdd4bf1244293ab070e74bc27b, type: 3}
   m_Name: TankShootSystem
   m_EditorClassIdentifier: 
-  onTankShootRequestedEvent: {fileID: 11400000, guid: 652be3a0afa2707489bf42764d77500d,
+  onTankShootRequestedEvent: {fileID: 11400000, guid: b5a25a07f61a87e4483698538e1ce6d2,
     type: 2}
