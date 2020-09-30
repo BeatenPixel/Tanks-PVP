@@ -6,11 +6,17 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "TanksPVP/ArtManager", fileName = "ArtManager")]
 public class ArtManager : ScriptableObject {
 
+    public static ArtManager inst;
+
     [SerializeField] private Sprite[] blockSprites;
     [SerializeField] private Sprite[] brickSprites;
     [SerializeField] private List<BlockAnimation> blockAnimations;
     public List<TankAnimation> tankAnimations;
     
+    public void Initialize() {
+        inst = this;
+    }
+
     public Sprite GetBlockSprite(BlockType blockType) {
         try {
             return blockSprites[(int) blockType - 2];

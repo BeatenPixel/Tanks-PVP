@@ -19,9 +19,6 @@ public sealed class MapSystem : UpdateSystem {
     private Filter animatedBlocksFilter;
     private Filter collidableBlocksFilter;
 
-    private ObjectSpawnSystem objectSpawnSystem;
-    private ArtManager artManager;
-
     private Timer animationUpdateTimer;
 
     private Vector2 blockSize = new Vector2(1f,1f);
@@ -33,15 +30,14 @@ public sealed class MapSystem : UpdateSystem {
         animationUpdateTimer = new Timer(0.7f);
     }
 
-    public void Initialize(ObjectSpawnSystem _blockSpawnSystem, ArtManager _artManager) {
-        objectSpawnSystem = _blockSpawnSystem;
-        artManager = _artManager;
-        
+    public void Initialize() {
         mapFilter = World.Filter.With<MapComponent>();
         allBlocksFilter = World.Filter.With<BlockComponent>();
         flagBlocksFilter = World.Filter.With<BlockComponent>().With<BlockFlagComponent>();
         animatedBlocksFilter = World.Filter.With<BlockComponent>().With<BlockAnimatedRenderComponent>();
         collidableBlocksFilter = World.Filter.With<BlockComponent>().With<BlockCollidableComponent>();
+
+        World.UpdateFilters();
 
         ref var map = ref mapFilter.First().GetComponent<MapComponent>();
 
@@ -101,7 +97,7 @@ public sealed class MapSystem : UpdateSystem {
                 if (entityID < blockEntities.Length) {
                     blockEntity = blockEntities[entityID];
                 } else {
-                    blockProvider = objectSpawnSystem.InstantiateBlock();
+                    blockProvider = ObjectSpawner.inst.InstantiateBlock();
                     blockEntity = blockProvider.Entity;
                 }                
 
@@ -119,7 +115,7 @@ public sealed class MapSystem : UpdateSystem {
                 else {
                     ref BlockRenderComponent renderComponent = ref blockEntity.GetComponent<BlockRenderComponent>();
                     renderComponent.m_Transform.position = GetBlockPosition(x, y);
-                    renderComponent.spriteRenderer.sprite = artManager.GetBlockSprite(blockType);
+                    renderComponent.spriteRenderer.sprite = ArtManager.inst.GetBlockSprite(blockType);
                 }
 
                 if (blockType == BlockType.WALL) {
@@ -232,7 +228,7 @@ public sealed class MapSystem : UpdateSystem {
         Entity blockEntity = m.blockEntities[x, y];
         
         if(blockEntity == null) {
-            blockEntity = objectSpawnSystem.InstantiateBlock().Entity;
+            blockEntity = ObjectSpawner.inst.InstantiateBlock().Entity;
         }
 
         ref BlockComponent blockComponent = ref blockEntity.GetComponent<BlockComponent>();
@@ -254,7 +250,7 @@ public sealed class MapSystem : UpdateSystem {
                     byte subBlocks = (byte)args[0];
 
                     renderComponent.m_Transform.position = GetBlockPosition(x, y);
-                    renderComponent.spriteRenderer.sprite = artManager.GetBrickSprite(subBlocks);
+                    renderComponent.spriteRenderer.sprite = ArtManager.inst.GetBrickSprite(subBlocks);
 
                     collidableComponent.collisionLayer = BlockCollisionLayer.TANK | BlockCollisionLayer.BULLET;
                     collidableComponent.collisionSubBlocks = subBlocks;
@@ -264,7 +260,7 @@ public sealed class MapSystem : UpdateSystem {
                     byte subBlocks = (byte)args[0];
 
                     renderComponent.m_Transform.position = GetBlockPosition(x, y);
-                    renderComponent.spriteRenderer.sprite = artManager.GetBrickSprite(subBlocks);
+                    renderComponent.spriteRenderer.sprite = ArtManager.inst.GetBrickSprite(subBlocks);
 
                     collidableComponent.collisionLayer = BlockCollisionLayer.TANK | BlockCollisionLayer.BULLET;
                     collidableComponent.collisionSubBlocks = subBlocks;
@@ -280,7 +276,7 @@ public sealed class MapSystem : UpdateSystem {
     private void UpdateAnimation(ref MapComponent map) {
         foreach (var ent in animatedBlocksFilter) {
             ref BlockAnimatedRenderComponent animRend = ref ent.GetComponent<BlockAnimatedRenderComponent>();
-            BlockAnimation blockAnimationData = artManager.GetBlockAnimation(animRend.content);
+            BlockAnimation blockAnimationData = ArtManager.inst.GetBlockAnimation(animRend.content);
             animRend.currentAnimationFrame++;
             if(animRend.currentAnimationFrame >= blockAnimationData.sprites.Length) {
                 animRend.currentAnimationFrame = 0;

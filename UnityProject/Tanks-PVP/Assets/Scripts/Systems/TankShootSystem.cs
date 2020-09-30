@@ -16,13 +16,11 @@ public sealed class TankShootSystem : UpdateSystem {
 
     [SerializeField] private GlobalEventString onTankShootRequestedEvent;
 
+    private MapSystem mapSystem;
+
     private Filter tanksFilter;
     private Filter projectilesFilter;
     private Filter playersFilter;
-
-    private ObjectSpawnSystem objectSpawnSystem;
-    private MapSystem mapSystem;
-    private ArtManager artManager;
 
     public override void OnAwake() {
         playersFilter = World.Filter.With<PlayerComponent>();
@@ -30,17 +28,13 @@ public sealed class TankShootSystem : UpdateSystem {
         projectilesFilter = World.Filter.With<ProjectileComponent>();
     }
 
-    public void Initialize(ObjectSpawnSystem _objectSpawnSystem, MapSystem _mapSystem, ArtManager _artManager) {
-        objectSpawnSystem = _objectSpawnSystem;
+    public void Initialize(MapSystem _mapSystem) {
         mapSystem = _mapSystem;
-        artManager = _artManager;
     }
 
     public override void OnUpdate(float deltaTime) {
 
         if(onTankShootRequestedEvent.IsPublished) {
-
-            Debug.Log("SHOOT");
 
             foreach (var networkViewIDStr in onTankShootRequestedEvent.BatchedChanges) {
                 int networkViewID = int.Parse(networkViewIDStr);
@@ -61,7 +55,7 @@ public sealed class TankShootSystem : UpdateSystem {
                 
                 ref TankComponent tank = ref tankEntity.GetComponent<TankComponent>();
 
-                ProjectileProvider pp = objectSpawnSystem.InstantiateBullet();
+                ProjectileProvider pp = ObjectSpawner.inst.InstantiateBullet();
                 ref ProjectileComponent projectile = ref pp.Entity.GetComponent<ProjectileComponent>();
                 ref ProjectileRenderComponent projectileRender = ref pp.Entity.GetComponent<ProjectileRenderComponent>();
 
@@ -151,13 +145,9 @@ public sealed class TankShootSystem : UpdateSystem {
         byte mask = (byte)~(1 << affectingBytes[dir * 2] | 1 << affectingBytes[dir * 2 + 1]);
         blockCol.collisionSubBlocks = (byte)(blockCol.collisionSubBlocks & mask);
 
-        Debug.Log(c.entity.GetComponent<BlockCollidableComponent>().collisionSubBlocks);
-
-        Debug.Log("dir " + dir + " sub" + (Convert.ToString(c.subBlockID)) + " mask " + (Convert.ToString(mask,2) )+ " newSubBlocks " + Convert.ToString(blockCol.collisionSubBlocks,2));
-
         if (blockCol.collisionSubBlocks > 0) {
             if(block.type == BlockType.BRICK) {
-                blockRender.spriteRenderer.sprite = artManager.GetBrickSprite(blockCol.collisionSubBlocks);
+                blockRender.spriteRenderer.sprite = ArtManager.inst.GetBrickSprite(blockCol.collisionSubBlocks);
             }
         } else {
             Destroy(blockRender.m_Transform.gameObject);

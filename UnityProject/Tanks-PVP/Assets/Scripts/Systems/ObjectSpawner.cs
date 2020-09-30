@@ -3,23 +3,18 @@ using UnityEngine;
 using Unity.IL2CPP.CompilerServices;
 using Photon.Pun;
 
-[Il2CppSetOption(Option.NullChecks, false)]
-[Il2CppSetOption(Option.ArrayBoundsChecks, false)]
-[Il2CppSetOption(Option.DivideByZeroChecks, false)]
-[CreateAssetMenu(menuName = "ECS/Systems/" + nameof(ObjectSpawnSystem))]
-public sealed class ObjectSpawnSystem : UpdateSystem {
+[CreateAssetMenu(menuName = "Forsis/" + nameof(ObjectSpawner))]
+public sealed class ObjectSpawner : ScriptableObject {
+
+    public static ObjectSpawner inst;
 
     public BlockProvider basicBlockProvider;
     public AnimatedBlockProvider animatedBlockProvider;
     public ProjectileProvider projectileProvider;
     public PlayerProvider playerProviderPrefab;
 
-    public override void OnAwake() {
-        
-    }
-
-    public override void OnUpdate(float deltaTime) {
-
+    public void Initialize() {
+        inst = this;
     }
 
     public BlockProvider InstantiateBlock() {

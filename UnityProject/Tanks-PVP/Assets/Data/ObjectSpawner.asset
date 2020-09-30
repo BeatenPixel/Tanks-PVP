@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bba538bff81429478e10e04ff06a337, type: 3}
-  m_Name: ObjectSpawnSystem
+  m_Name: ObjectSpawner
   m_EditorClassIdentifier: 
   basicBlockProvider: {fileID: 3735790745993169987, guid: aeac779c594a94e4397cfc3bc7610c85,
     type: 3}

@@ -11,8 +11,6 @@ public sealed class TanksRenderSystem : UpdateSystem {
 
     private Filter tanksFilter;
 
-    private ArtManager artManager;
-
     private Timer tankAnimationUpdateTimer;
 
     public override void OnAwake() {
@@ -21,8 +19,8 @@ public sealed class TanksRenderSystem : UpdateSystem {
         tanksFilter = World.Filter.With<TankComponent>().With<TankRenderComponent>();
     }
 
-    public void Initialize(ArtManager _artManager) {
-        artManager = _artManager;
+    public void Initialize() {
+        
     }
 
     public override void OnUpdate(float deltaTime) {
@@ -41,7 +39,7 @@ public sealed class TanksRenderSystem : UpdateSystem {
             }
 
             tankRenderComponent.m_Transform.position = new Vector3(tankComponent.x, tankComponent.y, 0);
-            tankRenderComponent.spriteRenderer.sprite = artManager.GetTankSprite(tankComponent.tankType, tankComponent.currentLevel, tankComponent.faceDirection, tankRenderComponent.animationFrame);
+            tankRenderComponent.spriteRenderer.sprite = ArtManager.inst.GetTankSprite(tankComponent.tankType, tankComponent.currentLevel, tankComponent.faceDirection, tankRenderComponent.animationFrame);
         }
 
     }
